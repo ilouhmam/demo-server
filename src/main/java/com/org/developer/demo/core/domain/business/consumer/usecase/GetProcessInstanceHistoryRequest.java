@@ -6,4 +6,5 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class GetProcessInstanceHistoryRequest {
+    private String id;
 }

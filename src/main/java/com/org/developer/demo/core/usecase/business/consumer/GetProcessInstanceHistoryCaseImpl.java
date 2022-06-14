@@ -20,7 +20,12 @@ public class GetProcessInstanceHistoryCaseImpl implements GetProcessInstanceHist
     }
 
     @Override
-    public List<ProcessInstance> handle(GetProcessInstanceHistoryRequest request) {
+    public List<ProcessInstance> handleList(GetProcessInstanceHistoryRequest request) {
         return restTemplate.getForObject("http://localhost:8080/engine-rest/history/process-instance",List.class);
+    }
+
+    @Override
+    public ProcessInstance handle(String id) {
+        return restTemplate.getForObject("http://localhost:8080/engine-rest/history/process-instance/"+id,ProcessInstance.class);
     }
 }

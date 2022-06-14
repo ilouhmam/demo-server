@@ -2,9 +2,9 @@ package com.org.developer.demo.core.domain.business.consumer.usecase;
 
 import java.util.List;
 
-@FunctionalInterface
 public interface GetProcessInstanceHistoryCase {
 
-    List<ProcessInstance> handle(GetProcessInstanceHistoryRequest request);
+    List<ProcessInstance> handleList(GetProcessInstanceHistoryRequest request);
+    ProcessInstance handle(String id);
 
 }
